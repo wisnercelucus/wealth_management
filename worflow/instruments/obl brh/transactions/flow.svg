@@ -1,0 +1,81 @@
+<svg viewBox="0 0 920 600" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrowP" markerWidth="10" markerHeight="8" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#c026d3"/>
+    </marker>
+  </defs>
+
+  <!-- lane headers -->
+  <rect x="40" y="18" width="220" height="40" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="150" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">CLIENT BOOK</text>
+  <text x="150" y="51" text-anchor="middle" font-size="10" fill="#1e40af">client books</text>
+
+  <rect x="350" y="18" width="220" height="40" rx="8" fill="#ccfbf1" stroke="#0d9488"/>
+  <text x="460" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#115e59">PROFIN BOOK</text>
+  <text x="460" y="51" text-anchor="middle" font-size="10" fill="#0f766e">op. account / BRH account</text>
+
+  <rect x="660" y="18" width="220" height="40" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="770" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">BRH</text>
+  <text x="770" y="51" text-anchor="middle" font-size="10" fill="#b45309">counterparty</text>
+
+  <!-- lifelines -->
+  <line x1="150" y1="58" x2="150" y2="530" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+  <line x1="460" y1="58" x2="460" y2="530" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+  <line x1="770" y1="58" x2="770" y2="530" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+
+  <!-- 1 subscription -->
+  <text x="305" y="88" text-anchor="middle" font-size="11" fill="#334155">Buy BRH — subscription cash</text>
+  <line x1="150" y1="95" x2="458" y2="95" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- 2 send to BRH (internal) -->
+  <rect x="330" y="116" width="260" height="36" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="460" y="131" text-anchor="middle" font-size="10" fill="#334155">Send to BRH · batch = sum of subscriptions</text>
+  <text x="460" y="145" text-anchor="middle" font-size="10" fill="#64748b">op. account &#8594; BRH account</text>
+
+  <!-- 3 debit principal -->
+  <text x="615" y="183" text-anchor="middle" font-size="11" fill="#334155">BRH Debit Note — principal</text>
+  <line x1="460" y1="190" x2="768" y2="190" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- 4 prime credited -->
+  <text x="615" y="221" text-anchor="middle" font-size="11" fill="#a21caf">prime de succès credited</text>
+  <line x1="770" y1="228" x2="462" y2="228" stroke="#c026d3" marker-end="url(#arrowP)"/>
+
+  <!-- divider: maturity -->
+  <line x1="40" y1="258" x2="880" y2="258" stroke="#e2e8f0"/>
+  <text x="44" y="254" font-size="10" font-style="italic" fill="#94a3b8">If held to maturity</text>
+
+  <!-- 5 maturity credit -->
+  <text x="615" y="285" text-anchor="middle" font-size="11" fill="#334155">BRH Credit — proceeds<tspan fill="#a21caf"> · prime kept</tspan></text>
+  <line x1="770" y1="292" x2="462" y2="292" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- 6 maturity payout -->
+  <text x="305" y="323" text-anchor="middle" font-size="11" fill="#334155">Maturity payout to client</text>
+  <line x1="460" y1="330" x2="152" y2="330" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- divider: early -->
+  <line x1="40" y1="360" x2="880" y2="360" stroke="#e2e8f0"/>
+  <text x="44" y="356" font-size="10" font-style="italic" fill="#94a3b8">If redeemed early instead</text>
+
+  <!-- 7 early credit -->
+  <text x="615" y="387" text-anchor="middle" font-size="11" fill="#334155">BRH Credit Note — proceeds,<tspan fill="#a21caf"> prime reclaimed</tspan></text>
+  <line x1="770" y1="394" x2="462" y2="394" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- 8 early payout -->
+  <text x="305" y="425" text-anchor="middle" font-size="11" fill="#334155">Payout to client, less penalty</text>
+  <line x1="460" y1="432" x2="152" y2="432" stroke="#475569" marker-end="url(#arrow)"/>
+
+  <!-- divider: after -->
+  <line x1="40" y1="462" x2="880" y2="462" stroke="#e2e8f0"/>
+  <text x="44" y="458" font-size="10" font-style="italic" fill="#94a3b8">Afterwards</text>
+
+  <!-- 9 repatriation (internal) -->
+  <rect x="330" y="476" width="260" height="36" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="460" y="491" text-anchor="middle" font-size="10" fill="#334155">Repatriation</text>
+  <text x="460" y="505" text-anchor="middle" font-size="10" fill="#64748b">BRH account &#8594; op. account</text>
+
+  <!-- legend -->
+  <text x="40" y="560" font-size="10" fill="#94a3b8">Arrows = money movement  ·  magenta = prime de succès  ·  boxes = transfers within ProFin (two legs)  ·  a bond takes one path, not both</text>
+</svg>
