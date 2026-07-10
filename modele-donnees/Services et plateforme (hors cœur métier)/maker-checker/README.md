@@ -57,7 +57,7 @@ role, group or user resolved through the identity lookup. The two genuine FKs to
 foundational tier.
 
 ## Lifecycle
-
+ 
 ```mermaid
 stateDiagram-v2
     [*] --> DRAFT
